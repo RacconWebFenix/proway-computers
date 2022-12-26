@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { NotificacaoService } from '../notificacao.service';
 
 @Component({
   selector: 'app-contato',
@@ -15,5 +16,11 @@ export class ContatoComponent {
     mensagem: ['', [Validators.minLength(20), Validators.required]],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private notificationService: NotificacaoService) {}
+
+  enviarFormulario(){
+    this.notificationService.notificar("Formulário enviado com sucesso!")
+    this.formContato.reset()
+  }
+
 }

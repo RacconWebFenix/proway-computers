@@ -7,16 +7,18 @@
     <nav class="main-header__menu">
       <ul>
         <li>
-          <a href="">Produtos</a>
+          <a routerLink="produtos">Produtos</a>
         </li>
         <li>
-          <a href="">
+          <a routerLink="carrinho">
             <fa-icon [icon]="faCartShopping"></fa-icon>
-            <span class="badge-carrinho">0</span>
+            <span class="badge-carrinho">{{
+              this.carrinhoService.obtemCarrinho().length
+            }}</span>
           </a>
         </li>
         <li>
-          <a href="">Contato</a>
+          <a routerLink="contato">Contato</a>
         </li>
         <li>
           <a href=""><fa-icon [icon]="faFacebook"></fa-icon></a>

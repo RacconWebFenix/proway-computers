@@ -11,6 +11,7 @@ import {
   faCartShopping,
   faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons';
+import { CarrinhoService } from '../carrinho.service';
 
 @Component({
   selector: 'app-header',
@@ -18,6 +19,9 @@ import {
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+
+  constructor(public carrinhoService: CarrinhoService){}
+
   faGithub = faGithub;
   faTwitter = faTwitter;
   faFacebook = faFacebook;
@@ -25,4 +29,6 @@ export class HeaderComponent {
   faCartShopping = faCartShopping;
   faLinkedinIn = faLinkedinIn;
   faMagnifyingGlass = faMagnifyingGlass;
+
+  
 }

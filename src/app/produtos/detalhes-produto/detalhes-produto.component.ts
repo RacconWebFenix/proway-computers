@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CarrinhoService } from 'src/app/carrinho.service';
+import { NotificacaoService } from 'src/app/notificacao.service';
 import { ProdutosService } from 'src/app/produtos.service';
-import { IProduto } from '../produtos';
+import { IProduto, IProdutoCarrinho } from '../produtos';
 
 @Component({
   selector: 'app-detalhes-produto',
@@ -11,7 +13,9 @@ import { IProduto } from '../produtos';
 export class DetalhesProdutoComponent {
   constructor(
     private produtoService: ProdutosService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private notificacaoService: NotificacaoService,
+    private carrinhoService: CarrinhoService
   ) {}
 
   produto: IProduto | undefined;
@@ -23,5 +27,12 @@ export class DetalhesProdutoComponent {
     this.produto = this.produtoService.getOne(id);
   }
 
-
+  adicionarAoCarrinho() {
+    this.notificacaoService.notificar('O produto foi adicionado com sucesso');
+    const produto: IProdutoCarrinho = {
+      ...this.produto!,
+      quantidade: this.quantidade
+    }
+    this.carrinhoService.adicionarAoCarrinho(produto)
+  }
 }

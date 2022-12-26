@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CarrinhoModule } from './carrinho/carrinho.module';
+import { BarraPersquisaComponent } from './barra-persquisa/barra-persquisa.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { CarrinhoModule } from './carrinho/carrinho.module';
     HeaderComponent,
     FooterComponent,
     NaoEncontradoComponent,
-
+    BarraPersquisaComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import { CarrinhoModule } from './carrinho/carrinho.module';
     FontAwesomeModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -28,7 +28,7 @@ export class HeaderComponent {
   faInstagram = faInstagram;
   faCartShopping = faCartShopping;
   faLinkedinIn = faLinkedinIn;
-  faMagnifyingGlass = faMagnifyingGlass;
 
-  
+
+
 }
